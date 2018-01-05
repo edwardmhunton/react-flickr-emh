@@ -1,11 +1,23 @@
 import React from 'react';
 
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
+
+import FlickrApi from './api/flickr-api';
 
 
 class FlickrComponent extends React.Component {
 
-  getImage = () => {
+ constructor(props) {
+
+      super(props)
+
+        this.getImage("szc")
+
+  }
+
+  getImage = (query) => {
+
+    FlickrApi.getImage(query);
 
 
 
@@ -22,11 +34,14 @@ class FlickrComponent extends React.Component {
   }
 
 
+  //getImage(query)
+
+
 
 
   render() {
 
-    const {query, width, height, interval, idhtml, interval_text} = this.props;
+          const { query, width, height, interval, idhtml, interval_text } = this.props;
 
           return (
             <div>
@@ -34,7 +49,7 @@ class FlickrComponent extends React.Component {
               <img />
             </div>
             <input type="text" name="interval" id="display-interval" />
-            <label for='display-interval'>{interval_text}</label>
+            <label htmlFor='display-interval'>{interval_text}</label>
           </div>
         )
       }

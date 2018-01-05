@@ -1,1 +1,1 @@
-module.exports = []
+module.exports = ["An error occurred while attempting to generate metadata for api. Error: ENOENT: no such file or directory, open '/Users/edh04/Documents/react-flickr-emh/src/components/api/api.js'"]

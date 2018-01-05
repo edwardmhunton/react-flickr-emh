@@ -12,12 +12,13 @@ class FlickrComponentTest extends React.Component {
   render (){
 
     const props = {
-      width: 100,
-      height: 100,
-      query: "cats",
-      idhtml: 'flickr_component',
-      interval: 5,
-      interval_text: 'interval'
+
+      "width": 100,
+      "height": 100,
+      "query": "cats",
+      "idhtml": 'flickr_component',
+      "interval": 5,
+      "interval_text": 'interval'
 
 
 
