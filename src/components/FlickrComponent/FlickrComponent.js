@@ -68,7 +68,10 @@ state = {url:'', interval:5000, loaded:'Loading', timeout:null}
 
  onChange = (event) => {
     if(event.target.value.length > 0){
-      this.setState_Interval(event.target.value, this.createInterval);
+      this.setState_Interval(event.target.value, () => {
+        this.clearInterval();
+        this.startInterval(this.getImage);
+      });
     }
   }
 
@@ -77,12 +80,7 @@ state = {url:'', interval:5000, loaded:'Loading', timeout:null}
   }
 
   setState_Interval = (num, callback) => {
-    this.setState({interval: num}, () => callback());
-  }
-
-  createInterval = () => {
-    this.clearInterval();
-    this.startInterval(this.getImage);
+    this.setState({interval: num}, () => callback()); // avpids setState timing issues
   }
 
   componentDidMount = function(){
